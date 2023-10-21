@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2rem;
+  
+}
+
+
+.logo img{
+    width: 80px;
+    height: 80px;
+    transition:all ease 1.1s ;
+}
+
+.logo img:hover{
+    cursor: pointer;
+    transform: rotate(360deg) scale(1.6);
+}
+
+
+
+nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color:black;
+    font-weight: 700;
+    margin-right: 2.5rem;
+    position: relative;
+}
+
+nav a:hover{
+   color: darkred;
+}
+
+nav a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: darkred;
+    transition: width 0.25s ease-out;
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+main{
+    text-align: center;
+    margin-top: 10rem;
+    
+}
+
+
+
+main h1{
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: brown;
+    animation: textup 1.5s ease-in-out 3 backwards;
+    
+}
+
+@keyframes textup{
+    from{
+        transform: translateY(-1110%);
+
+
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+main div{
+    display: inline-block;
+}
+
+main img{
+    height: 200px;
+    width: 250px;
+    border-radius: 7px;
+    margin: .5rem;
+    margin-top: 1.5rem;
+    /* animation:images 3s ease-in-out infinite ; */
+    transition:all 3s ease;
+}
+
+
+
+@keyframes images {
+
+    0%{
+        transform:scale(1);
+
+    }
+    
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+
+
+main:hover{
+    animation-play-state:paused ;
+}
+
+main :hover{
+    cursor: pointer;
+    transform: scale(2);
+}
+
+
+/* 
+.image1:hover{
+    cursor: pointer;
+   
+    transform: scale(2);
+}
+.image2:hover{
+    cursor: pointer;
+    transform: scale(2);
+  
+}
+.image3:hover{
+    cursor: pointer;
+    transform: scale(2);
+   
+}
+.image4:hover{
+    cursor: pointer;
+    transform: scale(2);
+   
+} */
+
+
+footer{
+    padding: 30px;
+    position: absolute;
+bottom: 0;
+right: 0;
+}
+
+footer .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+
+}
+.icon i{
+    /* margin-right: 2rem; */
+width: 30px;
+height: 30px;
+font-size: 30px;
+color: black;
+transition: transform 1s ease;
+}
+
+.icon i:hover{
+    color: darkred;
+    transform: rotate(360deg);
+   
+}
