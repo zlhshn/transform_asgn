@@ -96,16 +96,17 @@ main div{
     display: inline-block;
 }
 
-
+/* !------------------ img-------------- */
 
 .container img{
     height: 200px;
     width: 250px;
     border-radius: 7px;
-    /* margin: .5rem; */
     margin-top: 3rem;
     /* animation:images 3s ease-in-out infinite; */
-    transition: all 1s ease;
+    transition: all 2s ease ;
+
+   
 }
 
 @keyframes images {
@@ -117,30 +118,33 @@ main div{
     }
 }
 
-/* @keyframes hoverİmage {
+@keyframes hoverİmage {
     0%{
         transform: scale(1);
     }
     100%{
         transform:scale(2.2) ;
     }
-}   */
+}  
 
 
 .container img:hover{
+     
     cursor: pointer;
-    /* animation-play-state: paused; */
-    animation:hoverİmage 3s ease;
-
-    animation-play-state:images none !important;
+    animation:images 3s ease-in-out infinite paused;
+    animation: hoverİmage 2s ease;
     
-    /* transform: scale(2.5); */
+    /* animation-fill-mode: images forwards;
+    animation-play-state: paused; */
+    /* animation:hoverİmage 3s ease; */
+
 }
 
 .container:hover img{
-    animation-play-state: images none !important;
- 
-    
+
+    /* animation-name: images;
+    animation-play-state:none; */
+
 }
 
 
