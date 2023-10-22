@@ -18,6 +18,9 @@ header{
 }
 
 
+/*! ------------------logo--------------- */
+
+
 .logo img{
     width: 80px;
     height: 80px;
@@ -30,7 +33,7 @@ header{
 }
 
 
-
+/* !-----------nav--------------- */
 nav a{
     text-decoration: none;
     font-size: 18px;
@@ -59,20 +62,21 @@ nav a:hover::before{
     width: 100%;
 }
 
+
+/*!----------------- main ----------------- */
 main{
     text-align: center;
     margin-top: 10rem;
     
 }
 
-
-
 main h1{
     font-size: 55px;
     font-weight: 700;
     letter-spacing: 3px;
     color: brown;
-    animation: textup 1.5s ease-in-out 3 backwards;
+    animation: textup 1s ease-in-out 5 alternate ;
+    animation-fill-mode: forwards;
     
 }
 
@@ -92,70 +96,62 @@ main div{
     display: inline-block;
 }
 
-main img{
+
+
+.container img{
     height: 200px;
     width: 250px;
     border-radius: 7px;
-    margin: .5rem;
-    margin-top: 1.5rem;
-    /* animation:images 3s ease-in-out infinite ; */
-    transition:all 3s ease;
+    /* margin: .5rem; */
+    margin-top: 3rem;
+    /* animation:images 3s ease-in-out infinite; */
+    transition: all 1s ease;
 }
 
-
-
 @keyframes images {
-
     0%{
         transform:scale(1);
-
     }
-    
     100%{
         transform: scale(1.5);
     }
 }
 
+/* @keyframes hoverİmage {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform:scale(2.2) ;
+    }
+}   */
 
 
-main:hover{
-    animation-play-state:paused ;
+.container img:hover{
+    cursor: pointer;
+    /* animation-play-state: paused; */
+    animation:hoverİmage 3s ease;
+
+    animation-play-state:images none !important;
+    
+    /* transform: scale(2.5); */
 }
 
-main :hover{
-    cursor: pointer;
-    transform: scale(2);
+.container:hover img{
+    animation-play-state: images none !important;
+ 
+    
 }
 
 
-/* 
-.image1:hover{
-    cursor: pointer;
-   
-    transform: scale(2);
-}
-.image2:hover{
-    cursor: pointer;
-    transform: scale(2);
-  
-}
-.image3:hover{
-    cursor: pointer;
-    transform: scale(2);
-   
-}
-.image4:hover{
-    cursor: pointer;
-    transform: scale(2);
-   
-} */
 
 
+/* ! --------------------- footer-------------- */
 footer{
     padding: 30px;
     position: absolute;
-bottom: 0;
-right: 0;
+    bottom: 0;
+    right: 0;
 }
 
 footer .icon{
