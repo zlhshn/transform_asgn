@@ -42,6 +42,9 @@ nav a{
     margin-right: 2.5rem;
     position: relative;
 }
+/* .hamburger-menu{
+    display: none;
+} */
 
 nav a:hover{
    color: darkred;
@@ -97,16 +100,19 @@ main div{
 }
 
 /* !------------------ img-------------- */
+.container{
+    /* transition: all ease 1s; */
+}
+
 
 .container img{
     height: 200px;
     width: 250px;
     border-radius: 7px;
     margin-top: 3rem;
-    /* animation:images 3s ease-in-out infinite; */
-    transition: all 2s ease ;
-
-   
+    animation:images 3s ease-in-out infinite;
+    transition: all ease 3s;
+    /* transform: translate(0); */
 }
 
 @keyframes images {
@@ -118,33 +124,20 @@ main div{
     }
 }
 
-@keyframes hoverİmage {
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform:scale(2.2) ;
-    }
-}  
 
 
 .container img:hover{
-     
+    position: relative;
     cursor: pointer;
-    animation:images 3s ease-in-out infinite paused;
     animation: hoverİmage 2s ease;
-    
-    /* animation-fill-mode: images forwards;
-    animation-play-state: paused; */
-    /* animation:hoverİmage 3s ease; */
+    transform: scale(2);
+    z-index: 1;
 
 }
 
 .container:hover img{
 
-    /* animation-name: images;
-    animation-play-state:none; */
-
+animation: none;
 }
 
 
@@ -153,14 +146,13 @@ main div{
 /* ! --------------------- footer-------------- */
 footer{
     padding: 30px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    position: static;
+    margin-top: 15rem;
 }
 
 footer .icon{
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     gap:2rem;
 
@@ -178,4 +170,144 @@ transition: transform 1s ease;
     color: darkred;
     transform: rotate(360deg);
    
+}
+
+@media (max-width :992px) {
+    .container img{
+
+      
+        margin-top: 0rem;
+    
+    }
+
+    main{
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .container img:hover{
+        transform: scale(1.5) translate(100px);
+    }
+
+    .container img:nth-child(2):hover{
+        transform: scale(1.5) translateY(-100px) ;
+    }
+    .container img:nth-child(3):hover{
+        transform: scale(1.5) translate(-100px) ;
+    }
+    
+    footer{
+        padding: 20px;
+        position: static;
+        bottom: 0;
+        /* margin-top: 8rem; */
+
+    }
+
+    footer .icon{
+        display: flex;
+        justify-content:right;
+        align-items: center;
+       margin-right: 30px;
+       margin-bottom: 10px;
+       gap: 20px;
+    
+    }
+}
+
+
+@media (max-width :600px) {
+
+    .container img:hover{
+        transform: scale(1.5) translate(0px);
+    }
+
+    .container img:nth-child(2):hover{
+        transform: scale(1.5) translateY(0px) ;
+    }
+    .container img:nth-child(3):hover{
+        transform: scale(1.5) translate(0px) ;
+    }
+
+
+    footer{
+        padding: 0px;
+        position:static;
+        bottom: 5px;
+        right: 0;
+    }
+
+    footer .icon{
+        display: flex;
+        justify-content:right;
+        align-items: center;
+       margin-right: 30px;
+       margin-bottom: 10px;
+       gap: 20px;
+    
+    }
+  
+    
+}
+
+@media (max-width:600px) {
+
+
+    
+ nav a{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin: auto;
+    visibility: hidden;
+
+ }
+    .hamburger-menu{
+       width: 100px;
+       height: 80px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    
+    .hamburger{
+        width: 50px;
+        height: 6px;
+        border-radius: 5px;
+        background-color: black;
+    }
+
+    .hamburger::after,.hamburger::before{
+        content: '';
+        width: 50px;
+        height: 6px;
+        border-radius: 5px;
+        background-color: black;
+        position: absolute;
+
+    }
+    .hamburger::before{
+        transform: translateY(20px);
+    }
+    .hamburger::after{
+        transform: translateY(-20px);
+    }
+
+    .open .hamburger:hover{
+       background-color: transparent;
+
+    }
+
+   .hamburger-menu:hover nav a{
+      visibility: visible;
+   }
+
+   
+
+    .open .hamburger:hover::before{
+         transform: rotate(45deg);
+    }
+    .open .hamburger:hover::after{
+         transform: rotate(-45deg);
+    }
 }
