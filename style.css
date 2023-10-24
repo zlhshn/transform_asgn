@@ -129,7 +129,7 @@ main div{
 .container img:hover{
     position: relative;
     cursor: pointer;
-    animation: hoverİmage 2s ease;
+    /* animation: hoverİmage 2s ease; */
     transform: scale(2);
     z-index: 1;
 
@@ -217,6 +217,9 @@ transition: transform 1s ease;
 
 
 @media (max-width :600px) {
+    .nav-menu a{
+        display: none
+    }
 
     .container img:hover{
         transform: scale(1.5) translate(0px);
@@ -259,9 +262,11 @@ transition: transform 1s ease;
     align-items: end;
     justify-content: center;
     margin: auto;
-    visibility: hidden;
-
+    display: none;
  }
+
+
+
     .hamburger-menu{
        width: 100px;
        height: 80px;
@@ -298,16 +303,19 @@ transition: transform 1s ease;
 
     }
 
-   .hamburger-menu:hover nav a{
-      visibility: visible;
-   }
-
-   
+    .open .hamburger:hover a{
+       display: block;
+ 
+     }
 
     .open .hamburger:hover::before{
          transform: rotate(45deg);
     }
+
     .open .hamburger:hover::after{
          transform: rotate(-45deg);
     }
+
+
+   
 }
