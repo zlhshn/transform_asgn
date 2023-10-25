@@ -102,9 +102,6 @@ main div{
 }
 
 /* !------------------ img-------------- */
-.container{
-    /* transition: all ease 1s; */
-}
 
 
 .container img{
@@ -258,12 +255,7 @@ transition: transform 1s ease;
 
 @media (max-width:600px) {
 
-    .nav-menu{
-        /* position: relative; */
-        /* display: inline-block; */
- 
-    }
-        
+   
      .nav-menu{
        display: none;
       text-align: center;
